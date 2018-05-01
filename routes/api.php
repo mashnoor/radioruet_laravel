@@ -17,10 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-route::post('/onlinemsg','MsgController@postOnlineMsg');
+route::post('/onlinemsg','ListenerController@postOnlineMsg');
 //route::get('/onlinemsg','MsgController@getOnlineMsg');
-route::post('/secretmsg','MsgController@postSecretMsg');
+route::post('/secretmsg','ListenerController@postSecretMsg');
 //route::get('/secretmsg','MsgController@getSecretMsg');
-route::get('/archive','MsgController@getArchive');
+route::get('/archive','AdminController@getArchive');
 
-route::post('/devices','MsgController@getDevices');
+route::post('/devices','AdminController@getDevices');

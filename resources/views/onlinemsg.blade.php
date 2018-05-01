@@ -29,51 +29,7 @@
  	<h2> <center><font color="blue">Online Messages</font></center> </h2>
  	<br>
 
- 	   <div class="bootstrap-iso">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <form action="{{ url('/admin/onlinemsg/filter') }}" method="post">
-                                <div class="form-group ">
-                                    <label class="control-label " for="fromdate">
-                                        From Date
-                                    </label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar">
-                                            </i>
-                                        </div>
-                                        <input class="form-control" id="date" name="fromdate" placeholder="YYYY/MM/DD"
-                                               type="text"/>
-                                    </div>
-                                </div>
-                                <div class="form-group ">
-                                    <label class="control-label " for="date">
-                                        To Date
-                                    </label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-calendar">
-                                            </i>
-                                        </div>
-                                        <input class="form-control form-control" id="date" name="todate"
-                                               placeholder="YYYY/MM/DD" type="text"/>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <div class="form-group">
-                                    <div>
-                                        <button class="btn btn-primary " name="submit" type="submit">
-                                            Submit
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+ 	   
  	<table id="example" class="display" cellspacing="0" width="100%">
 
  		 <thead>

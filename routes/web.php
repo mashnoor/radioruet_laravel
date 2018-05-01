@@ -15,11 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::get('/check','MsgController@check');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin/onlinemsg','MsgController@getOnlineMsg');
-Route::get('/admin/secretmsg','MsgController@getSecretMsg');
+Route::get('/admin/onlinemsg','AdminController@getOnlineMsg');
+Route::get('/admin/secretmsg','AdminController@getSecretMsg');
+Route::get('/admin/showname','AdminController@gotoShowname');
+route::post('/admin/postshowname','AdminController@postShowname');
