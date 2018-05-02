@@ -8,6 +8,7 @@ use App\OnlineMsg;
 use App\SecretMsg;
 use App\Archive;
 use App\Devices;
+use App\showname;
 
 class ListenerController extends Controller
 {
@@ -41,6 +42,15 @@ class ListenerController extends Controller
   $request-> save();
   
 }
+
+	function get_showname()
+
+	{
+
+		$show_name =  DB::select("SELECT * FROM showname where created_at = (select max(created_at) FROM showname)");
+
+		return view('LatestShowname')->with('show_name',$show_name);
+	}
 
 
 }

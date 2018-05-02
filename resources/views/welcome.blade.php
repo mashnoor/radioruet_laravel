@@ -83,6 +83,12 @@
 
                 <div class="links">
                     <a href="https://radioruet.com/">Current Website</a>
+                    <a href="/admin/onlinemsg">Online Messages</a>
+    <a href="/admin/secretmsg">Secret Messages</a>
+       <a href="/admin/show_doctors">Archive Type</a>
+        <a href="/admin/showname">Current Show</a>
+        <<a href="/admin/getshowname">Show Name</a>
+
                    
                 </div>
             </div>

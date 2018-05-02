@@ -45,15 +45,26 @@ return view('showname');
 
  }
 
- function postShowname(request $request)
+ function postShowname(Request $request)
 
  {
- 	$showname = new Showname();
+  $showname = new Showname();
   $showname->name = $request->name;
-  $request-> save();
-  return 'Good Job!!';
+  $showname-> save();
+  return "GOOD";
 
  }
+
+ function get_showname()
+
+  {
+
+    $show_name =  DB::select("SELECT * FROM showname where created_at = (select max(created_at) FROM showname)");
+
+    return view('LatestShowname')->with('show_name',$show_name);
+  }
+
+
 
 
 }

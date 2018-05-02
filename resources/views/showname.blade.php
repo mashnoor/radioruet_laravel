@@ -15,15 +15,19 @@
  <div class="container-fluid">
   <div class="row">
    <div class="col-md-6 col-sm-6 col-xs-12">
-    <form action="postshowname" method="post" >
+    <form action="/admin/showname" method="post" >
+      
+     <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
      <div class="form-group ">
       <label class="control-label " for="name">
        Today's Show Name
       </label>
       <input class="form-control" id="name" name="name" type="text"/>
      </div>
+      <!-- <input type ="hidden" name="_token" value = "{{csrf_token()}}"><br/> -->
      <div class="form-group">
       <div>
+       <!-- <input type ="hidden" name="_token" value = "{{csrf_token()}}"> -->
        <button class="btn btn-lg btn-danger " name="submit" type="submit">
         Set   
        </button>

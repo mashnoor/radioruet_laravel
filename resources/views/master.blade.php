@@ -22,11 +22,11 @@
       <a class="navbar-brand" href={{ url('/') }}>RadioRuet</a>
     </div>
     <ul class="nav navbar-nav">
-    <li class="active"><a href="/admin">Home</a></li>
+    <li class="active"><a href="/">Home</a></li>
       <li class="active"><a href="/admin/onlinemsg">Online Messages</a></li>
       <li class="active"><a href="/admin/secretmsg">Secret Messages</a></li>
        <li class="active"><a href="/admin/show_doctors">Archive Type</a></li>
-        <li class="active"><a href="/blog/create">Set News</a></li>
+        <li class="active"><a href="/admin/showname">Current Show</a></li>
         <li class="active"><a href="/admin/prescribe">Statistics</a></li>
         
       </ul>

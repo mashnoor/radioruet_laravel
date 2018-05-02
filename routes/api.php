@@ -23,4 +23,4 @@ route::post('/secretmsg','ListenerController@postSecretMsg');
 //route::get('/secretmsg','MsgController@getSecretMsg');
 route::get('/archive','AdminController@getArchive');
 
-route::post('/devices','AdminController@getDevices');
+route::post('/devices','ListenerController@getDevices');

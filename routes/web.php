@@ -23,4 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin/onlinemsg','AdminController@getOnlineMsg');
 Route::get('/admin/secretmsg','AdminController@getSecretMsg');
 Route::get('/admin/showname','AdminController@gotoShowname');
-route::post('/admin/postshowname','AdminController@postShowname');
+route::post('/admin/showname','AdminController@postShowname');
+Route::get('/getshowname','ListenerController@get_showname');
+Route::get('/admin/getshowname','ListenerController@get_showname');
