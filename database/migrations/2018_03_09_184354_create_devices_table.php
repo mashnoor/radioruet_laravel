@@ -15,7 +15,7 @@ class CreateDevicesTable extends Migration
     {
         Schema::create('devices', function (Blueprint $table) {
             $table->increments('id');
-            $table_>string('imie');
+            $table->string('imei');
             $table->rememberToken();
             $table->timestamps();
         });

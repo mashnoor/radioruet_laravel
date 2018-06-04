@@ -7,50 +7,73 @@ use Illuminate\Support\Facades\DB;
 use App\OnlineMsg;
 use App\SecretMsg;
 use App\Archive;
-use App\Devices;
+use App\Device;
 use App\showname;
 
 class ListenerController extends Controller
 {
-    function postOnlineMsg (Request $request)
-  {
-	$onlinemsg = new OnlineMsg();
+    function postOnlineMsg(Request $request)
+    {
+        $onlinemsg = new OnlineMsg();
 
-	$onlinemsg->name =  $request->name;
-	$onlinemsg->department =  $request->department;
-	$onlinemsg->series =  $request->series;
-	$onlinemsg->message =  $request->message;
+        $onlinemsg->name = $request->name;
+        $onlinemsg->department = $request->department;
+        $onlinemsg->series = $request->series;
+        $onlinemsg->message = $request->message;
 
-	$onlinemsg->save();
-  return "Success";
+        $onlinemsg->save();
+        return "Success";
 
-  }
+    }
 
-  function postSecretMsg(Request $Request)
-  {
-  		$secretmsg = new SecretMsg;
-  		$secretmsg->msg = $Request->msg;
-  		$secretmsg->save();
+    function postSecretMsg(Request $Request)
+    {
+        $secretmsg = new SecretMsg;
+        $secretmsg->msg = $Request->message;
+        $secretmsg->save();
 
-  }
+        return 'success';
 
-    function getDevices(Request $request)
-{
+    }
 
-  $devices = new Devices();
-  $devices->imie = $request->imie;
-  $request-> save();
-  
-}
+    function saveUser(Request $request)
+    {
 
-	function get_showname()
+        $device = new Device();
+        $device->imie = $request->imei;
+        $device->save();
 
-	{
+        return 'success';
 
-		$show_name =  DB::select("SELECT * FROM showname where created_at = (select max(created_at) FROM showname)");
+    }
 
-		return view('LatestShowname')->with('show_name',$show_name);
-	}
+    function getShowName()
+
+    {
+        $show_name = Showname::orderBy('created_at', 'desc')->first();
+        return $show_name->name;
+
+    }
+
+    function addOrUpdateDevice(Request $request)
+    {
+        $imei = $request->get('imei');
+
+        $device = Device::where('imei', $imei)->first();
+        if ($device == null) {
+            $device = new Device();
+            $device->imei = $imei;
+            $device->token = $request->get('token');
+
+            $device->save();
+
+            return 'success';
+        } else {
+            $device->token = $request->get('token');
+            $device->save();
+            return 'success';
+        }
+    }
 
 
 }
